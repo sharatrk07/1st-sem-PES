@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<characters>
+    <character>
+        <name>Tony Stark</name>
+        <alias>Iron Man</alias>
+        <item>Arc Reactor Core</item>
+    </character>
+    <character>
+        <name>Steven Rogers</name>
+        <alias>Captain America</alias>
+        <item>Strontium Shield</item>
+    </character>
+</characters>

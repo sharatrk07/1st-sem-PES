@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Session</title>
+</head>
+<body>
+	<h1>WTF Form -- Session</h1>
+	<br>
+	<form method="POST" action="/">
+		{{ form.hidden_tag() }}
+		{{ form.name.label }} {{ form.name(size=20) }}
+		{{ form.submit() }}
+	</form>
+</body>
+</html>

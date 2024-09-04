@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message[1] }}">{{ message[0] }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="/">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }} {{ form.username(size=20) }}
+        <br>
+        {{ form.password.label }} {{ form.password(size=20) }}
+        <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
+-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }} {{ form.username(size=32) }}<br>
+        {{ form.password.label }} {{ form.password(size=32) }}<br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message[1] }}">{{ message[0] }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="/">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }} {{ form.username(size=20) }}
+        <br>
+        {{ form.password.label }} {{ form.password(size=20) }}
+        <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
+

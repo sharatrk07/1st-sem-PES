@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLAlchemy CRUD Operations and Relationships</title>
+    {% extends "_base.html" %}
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <h2>Authors and Books</h2>
+    <ol type="1">
+        {% for author in authors %}
+            <li>{{author.authname}}</li>
+            <form action="/deleteauth/{{ author.aid }}" method="POST" style="display:inline;">
+                <button type="submit">Delete Author</button>
+            </form>
+            <br>
+            Books:
+            <ol type="i">
+                {% for book in author.books %}
+                    <li>{{book.bookname}}</li>
+                    <form action="/deletebook/{{ book.bid }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete Book</button>
+                    </form>
+                {% endfor %}
+            </ol>
+            <form action="/addbook/{{author.aid}}" method="post">
+                Add Book: <input type="text" name="Title" required>
+                <button type="submit">Add Book</button>
+            </form>
+        {% endfor %}
+    </ol>
+    <form action="/addauth" method="post">
+        Add Author: <input type="text" name="AuthName" required>
+        <button type="submit">Add Author</button>
+    </form>
+</div>
+    {% endblock %}
+</body>
+</html>

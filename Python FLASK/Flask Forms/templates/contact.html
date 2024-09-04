@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us Form</title>
+</head>
+<body>
+	<h1>Contact Us</h1>
+	<br>
+	<form method="POST" action="/">
+		{{ form.hidden_tag() }}
+		{{ form.name.label }} <br>
+		{{ form.name(size=20) }}
+		<br>
+		<br>
+		{{ form.email.label }} <br>
+		{{ form.email }}
+		<br>
+		<br>
+		{{ form.message.label }} <br> {{ form.message }}
+		<br><br>
+		{{ form.submit() }}
+	</form>
+</body>
+</html>

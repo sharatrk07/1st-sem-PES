@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number List</title>
+</head>
+<body>
+    <h1>Number List</h1>
+    <form action="/addno" method="post">
+        <label>Enter a number</label><br>
+        <input type="text" name="Number">
+        <br>
+        <button type="submit">Add Number</button>
+    </form>
+    <h2>Numbers:</h2>
+    <ul>
+        {% for n in num %}
+            <li>{{ n.val }}</li>
+            {{ n.is_even }}
+        {% endfor %}
+    </ul>
+</body>
+</html>

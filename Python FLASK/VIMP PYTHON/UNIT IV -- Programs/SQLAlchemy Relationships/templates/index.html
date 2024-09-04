@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Library</title>
+</head>
+<body>
+	<h1>Authors and Books</h1>
+	<!-- Show as ul -->
+	<ul>
+		{% for author in authors %}
+			<!-- <li>{{author.aid}}</li> -->
+			<li>{{author.name}}</li>
+			Books: <br>
+			<ul>
+				{% for book in author.books %}
+					<li>{{book.title}}</li>
+				{% endfor %}
+			</ul>
+			<form method="post" action="/addbook/{{author.aid}}">
+		
+				Add Book: <input type="text" name="Title" required>
+				<input type="submit" value="Add Book">
+
+			</form>
+		{% endfor %}
+	</ul>
+
+	<form method="post" action="/addauth">
+		Author Name: <input type="text" name="Author" required>
+		<input type="submit" value="Add Author">
+	</form>
+
+
+</body>
+</html>

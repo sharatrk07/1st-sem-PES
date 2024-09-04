@@ -1,0 +1,7 @@
+import xml.etree.ElementTree as xml
+tree=xml.ElementTree(file='a.xml')
+root=tree.getroot()
+
+for i in root:
+    d=[{j.tag : j.text for j in i}]
+print(d)

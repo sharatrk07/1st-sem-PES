@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Flash Message Example</title>
+    </head>
+    <body>
+        <h1>Flash Message Example</h1>
+        <form action="/" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }} {{ form.name() }}
+            {{ form.submit() }}
+        </form>
+        <p>-------------------------------------</p>
+        {% with msgs = get_flashed_messages(with_categories=True) %}
+        <ul class="flashes">
+        {% for cat, msg in msgs %}
+        <li>{{ cat }} -- {{ msg }}</li>
+        {% endfor %}
+        </ul>
+        {% endwith %}
+    </body>
+</html>

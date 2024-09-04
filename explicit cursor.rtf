@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE TABLE students (\
+  student_id INTEGER PRIMARY KEY,\
+  name VARCHAR2(30),\
+  age INTEGER\
+);\
+\
+INSERT INTO students (student_id, name, age) VALUES (1, 'Alice', 20);\
+INSERT INTO students (student_id, name, age) VALUES (2, 'Bob', 22);\
+INSERT INTO students (student_id, name, age) VALUES (3, 'Charlie', 23);\
+\
+COMMIT;\
+\
+declare\
+cursor c is select name, age from students;\
+v_name students.name%type;\
+v_age students.age%type;\
+\
+begin\
+open c;\
+  loop\
+    fetch c into v_name, v_age;\
+    exit when c%notfound;\
+    dbms_output.put_line('name '||v_name||' age '||v_age);\
+    end loop;\
+close c;\
+end;\
+/}

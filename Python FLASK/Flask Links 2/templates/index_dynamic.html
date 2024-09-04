@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask URLs Example</title>
+</head>
+<body>
+    <h1>Profile URLs:</h1>
+    <ul>
+        <li><a href="{{ url_for('profile', username='user1') }}">User 1 Profile</a></li>
+        <li><a href="{{ url_for('profile', username='user2') }}">User 2 Profile</a></li>
+        <li><a href="{{ url_for('profile', username='user3') }}">User 3 Profile</a></li>
+    </ul>
+
+    <h1>Post URLs:</h1>
+    <ul>
+        <li><a href="{{ url_for('post', post_id=1) }}">Post 1</a></li>
+        <li><a href="{{ url_for('post', post_id=2) }}">Post 2</a></li>
+        <li><a href="{{ url_for('post', post_id=3) }}">Post 3</a></li>
+    </ul>
+</body>
+</html>

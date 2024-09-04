@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+</head>
+<body>
+    <h1>Authors and Books</h1>
+
+    <ul>
+        {% for author in authors %}
+            <li>
+                {{ author.name }}
+                <ul>
+                    {% for book in author.books %}
+                        <li>{{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+                <form method="post" action="{{ url_for('add_book', author_id=author.id) }}">
+                    <label for="book_title">Add Book:</label>
+                    <input type="text" name="book_title" required>
+                    <button type="submit">Add Book</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="{{ url_for('add_author') }}">
+        <label for="author_name">Add Author:</label>
+        <input type="text" name="author_name" required>
+        <button type="submit">Add Author</button>
+    </form>
+</body>
+</html>

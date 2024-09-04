@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SQLAlchemy CRUD Operations and Relationships</title>
+    {% extends "_base.html" %}
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <h2>Authors and Books</h2>
+    <ol type="1">
+        {% for author in authors %}
+            <li>{{author.authname}}</li>
+            <form action="/addbook/{{author.aid}}" method="post">
+                Add Book: <input type="text" name="Title" required>
+                <button type="submit">Add Book</button>
+            </form>
+        {% endfor %}
+    </ol>
+    <form action="/addauth" method="post">
+        Add Author: <input type="text" name="AuthName" required>
+        <button type="submit">Add Author</button>
+    </form>
+</div>
+    {% endblock %}
+</body>
+</html>

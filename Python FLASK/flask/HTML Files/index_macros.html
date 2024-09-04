@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask with Macros</title>
+</head>
+<body>
+<h1>List of Items:</h1>
+<ul>
+  {% for item in items %}
+    {{ render_item(item) }}
+  {% endfor %}
+</ul>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ format_price(product.price) }}</td>  </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

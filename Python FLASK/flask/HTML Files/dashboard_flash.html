@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="{{ message.category }}">{{ message.message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </body>
+</html>

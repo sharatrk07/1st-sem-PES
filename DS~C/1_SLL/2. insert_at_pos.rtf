@@ -1,0 +1,66 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34000\viewh18560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 #include<stdio.h>\
+#include<stdlib.h>\
+\
+struct Node\{\
+    int data;\
+    struct Node* next;\
+\};\
+\
+void Traversal(struct Node* ptr)\
+\{\
+    while(ptr != NULL)\
+    \{\
+        printf("Element  is: %d\\n", ptr->data);\
+        ptr=ptr->next;\
+    \}\
+\}\
+\
+void insert_at_pos(struct Node* head,int data, int pos)\{\
+    struct Node* ptr=head;\
+    struct Node* ptr2= (struct Node*) malloc (sizeof(struct Node));\
+    ptr2->data = data;\
+    ptr2->next= NULL;\
+    \
+    while(pos > 2)\{\
+        ptr=ptr->next;\
+        pos--;\
+    \}\
+    ptr2->next=ptr->next;\
+    ptr->next = ptr2;\
+\}\
+\
+int main()\
+\{\
+    struct Node* head= malloc(sizeof(struct Node));\
+    struct Node* second= malloc(sizeof(struct Node));\
+    struct Node* third= malloc(sizeof(struct Node));\
+    struct Node* fourth= malloc(sizeof(struct Node));\
+\
+    head->data=7;\
+    head->next=second;\
+\
+    second->data=11;\
+    second->next=third;\
+\
+    third->data=15;\
+    third->next=fourth;\
+\
+    fourth->data=7;\
+    fourth->next=NULL;\
+\
+    printf("Linked List before Inserting:\\n");\
+    Traversal(head);\
+    \
+    printf("Linked List after Inserting:\\n");\
+    insert_at_pos(head, 17, 2);\
+    Traversal(head);\
+    return 0;\
+\}\
+}

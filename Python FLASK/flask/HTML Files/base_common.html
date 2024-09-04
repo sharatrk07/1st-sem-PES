@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Base Title{% endblock %}</title>
+</head>
+<body>
+    {% include 'common.html' %}
+    <main>
+        {% block content %}
+            Base content
+        {% endblock %}
+    </main>
+    <footer>
+        &copy; 2024
+    </footer>
+</body>
+</html>

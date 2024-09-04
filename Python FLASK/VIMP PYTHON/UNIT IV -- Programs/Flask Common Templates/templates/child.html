@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Child Page{% endblock %}
+
+{% block content %}
+{{ super() }}
+<h1>Additional Child Content</h1>
+<br>
+<p>Additional Child Content specific for child.html</p>
+{% endblock %}
